@@ -2,8 +2,7 @@ import os
 
 os.system("clear")
 initial_dir = "/mnt/"
-
-# list_files = subprocess.run(["ls",])
+# initial_dir = "/Volumes/Data/"
 
 # find first dir to copy from
 def get_copy_dir(initial_dir):
@@ -13,6 +12,7 @@ def get_copy_dir(initial_dir):
         new_dir = ''
         dirs = os.listdir()
 
+        dirs = sorted(dirs)
         index = 1
         for i in dirs:
             print("{} {}".format(index, i))
@@ -36,6 +36,7 @@ def get_copy_dir(initial_dir):
         print('')
         os.chdir(new_dir)
 
+    copy_dir = copy_dir[:-1]
     for entry in copy_dir:
         new_dir = new_dir + entry
     return new_dir
@@ -47,6 +48,7 @@ def get_paste_dir(initial_dir):
         new_dir = ''
         dirs = os.listdir()
 
+        dirs = sorted(dirs)
         index = 1
         for i in dirs:
             print("{} {}".format(index, i))
