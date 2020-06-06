@@ -43,17 +43,21 @@ def get_copy_dir(initial_dir):
         print('')
         os.chdir(new_dir)
 
+    os.system("clear")
     print('')
     print("Send")
     print(" 1) the directory")
     print(" 2) the files")
     choice = input(": ")
     if choice == "2":
+        for entry in copy_dir:
+            new_dir = new_dir + entry
+        return new_dir
+    else:
         copy_dir = copy_dir[:-1]
-
-    for entry in copy_dir:
-        new_dir = new_dir + entry
-    return new_dir
+        for entry in copy_dir:
+            new_dir = new_dir + entry
+        return new_dir
 
 def get_paste_dir(initial_dir):
     paste_dir = [initial_dir]
