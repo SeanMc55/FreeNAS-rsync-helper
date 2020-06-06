@@ -1,8 +1,7 @@
 import os
-import subprocess
 
 os.system("clear")
-initial_dir = "/Volumes/Data/"
+initial_dir = "/mnt/"
 
 # list_files = subprocess.run(["ls",])
 
