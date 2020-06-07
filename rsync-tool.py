@@ -118,7 +118,19 @@ else:
     pastedir = '"'+get_paste_dir(initial_dir)+'"'
 
 os.system("clear")
-command = "rsync -rv --progress "+copydir+' '+pastedir
+print("Do you want to")
+print("1) copy")
+print("2) move")
+print("3) rsync")
+choice = input (": ")
+
+if choice == '1':
+    command = "cp -rv "+copydir+' '+pastedir
+if choice == '2':
+    command = "mv -rv "+copydir+' '+pastedir
+if choice == '3':
+    command = "rsync -rv --progress "+copydir+' '+pastedir
+
 print(command)
 os.system(command)
 
