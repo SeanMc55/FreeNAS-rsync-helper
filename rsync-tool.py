@@ -6,12 +6,11 @@ initial_dir = "/mnt/"
 
 quick_list = [\
     "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_h264_to_HEVC_q20/",\
-    "",\
-    "",\
+    "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_first_audio_first_sub/",\
+    "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_first_audio_second_sub/",\
     ""\
         ]
 
-# find first dir to copy from
 def get_copy_dir(initial_dir):
     copy_dir = [initial_dir]
     found = False
