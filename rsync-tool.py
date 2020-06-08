@@ -140,7 +140,8 @@ if choice == '1':
 if choice == '2':
     command = "mv -rv "+copydir+' '+pastedir
 if choice == '3':
-    command = "rsync -rvA --progress "+copydir+' '+pastedir
+    # command = "rsync -rvA --progress "+copydir+' '+pastedir
+    command = "rsync -rvpEt --progress "+copydir+' '+pastedir
 
 print(command)
 os.system(command)
