@@ -125,7 +125,19 @@ print("3) rsync")
 choice = input (": ")
 
 if choice == '1':
-    command = "cp -rv "+copydir+' '+pastedir
+    copydir = copydir[:-1]
+    pastedir = pastedir[:-1]
+
+    print('')
+    print("Send")
+    print(" 1) the directory")
+    print(" 2) the files")
+    choice2 = input(": ")
+    if choice2 == "2":
+        command = "cp -RTvp "+copydir+' '+pastedir
+    else:
+        command = "cp -Rvp "+copydir+' '+pastedir
+
 if choice == '2':
     command = "mv -rv "+copydir+' '+pastedir
 if choice == '3':
