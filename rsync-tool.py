@@ -45,19 +45,19 @@ def get_copy_dir(initial_dir):
     os.system("clear")
     print('')
     print("Send")
-    print(" 1) the directory")
-    print(" 2) the files")
+    print(" 1) the directory (without /)")
+    print(" 2) the files (with /)")
     choice = input(": ")
-    if choice == "2":
-        for entry in copy_dir:
-            new_dir = new_dir + entry
-        return new_dir
-    else:
+    if choice == "1":
         copy_dir = copy_dir[:-1]
         for entry in copy_dir:
             new_dir = new_dir + entry
         return new_dir
-
+    if choice == "2":
+        for entry in copy_dir:
+            new_dir = new_dir + entry
+        return new_dir
+    
 def get_paste_dir(initial_dir):
     paste_dir = [initial_dir]
     found = False
@@ -123,19 +123,18 @@ print("2) move")
 print("3) rsync")
 choice = input (": ")
 
+# go through the choices
 if choice == '1':
-    copydir = copydir[:-1]
-    pastedir = pastedir[:-1]
-
     print('')
     print("Send")
     print(" 1) the directory")
     print(" 2) the files")
     choice2 = input(": ")
-    if choice2 == "2":
-        command = "cp -RTvp "+copydir+' '+pastedir
-    else:
+    if choice2 == "1":
         command = "cp -Rvp "+copydir+' '+pastedir
+    if choice2 == "2":
+        pastedir = pastedir[:-2]
+        command = "cp -Rvp "+copydir+'* '+pastedir+'"'
 
 if choice == '2':
     command = "mv -rv "+copydir+' '+pastedir
@@ -143,7 +142,9 @@ if choice == '3':
     # command = "rsync -rvA --progress "+copydir+' '+pastedir
     command = "rsync -rvpEt --progress "+copydir+' '+pastedir
 
+os.system("clear")
 print(command)
+print('')
 os.system(command)
 
 exit()
