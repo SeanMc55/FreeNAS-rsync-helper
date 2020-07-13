@@ -5,9 +5,9 @@ initial_dir = "/mnt/"
 # initial_dir = "/Volumes/Data/"
 
 quick_list = [\
-    "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_h264_to_HEVC_q20/",\
-    "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_first_audio_first_sub/",\
-    "/mnt/fleeting_files/Transmission_Downloads/reencodes/render_first_audio_second_sub/",\
+    "",\
+    "",\
+    "",\
     ""\
         ]
 
