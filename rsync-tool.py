@@ -2,7 +2,6 @@ import os
 
 os.system("clear")
 initial_dir = "/mnt/"
-# initial_dir = "/Volumes/Data/"
 
 quick_list = [\
     "",\
@@ -137,7 +136,17 @@ if choice == '1':
         command = "cp -Rvp "+copydir+'* '+pastedir+'"'
 
 if choice == '2':
-    command = "mv -rv "+copydir+' '+pastedir
+    print('')
+    print("Send")
+    print(" 1) the directory")
+    print(" 2) the files")
+    choice2 = input(": ")
+    if choice2 == "1":
+        command = "mv -rvn "+copydir+' '+pastedir
+    if choice2 == "2":
+        pastedir = pastedir[:-2]
+        command = "mv -rvn " + copydir + '* ' + pastedir + '"'
+
 if choice == '3':
     # command = "rsync -rvA --progress "+copydir+' '+pastedir
     command = "rsync -rvpEt --progress "+copydir+' '+pastedir
