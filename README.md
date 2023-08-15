@@ -1,6 +1,6 @@
 # FreeNAS-rsync-helper
 
-This is a tool which allows you to brows to a directory to copy and then past locally on the host.
+This is a tool which allows you to browse to a directory to copy and then past locally on the host.
 
 Originally this was built to be used on a FreeNAS system so that I couold copy and past between datasets
 without having to go through the network. Instead this script transferes at local disk speed.
